@@ -1,5 +1,11 @@
 (function($){ // Open closure
 
+
+function isSmall() {
+  return matchMedia(Foundation.media_queries.small).matches &&
+    !matchMedia(Foundation.media_queries.medium).matches;
+}
+
 // Local vars
 var Scroller, ajaxurl, stats, type, text, totop, timer;
 
@@ -44,7 +50,10 @@ Scroller = function( settings ) {
 
 	// We have two type of infinite scroll
 	// cases 'scroll' and 'click'
+	if ( isSmall() ) {
 
+		type = "click"
+	};
 	if ( type == 'scroll' ) {
 		// Bind refresh to the scroll event
 		// Throttle to check for such case every 300ms
@@ -67,7 +76,6 @@ Scroller = function( settings ) {
 				self.refresh();
 			}
 		}, 300 );
-
 		// Ensure that enough posts are loaded to fill the initial viewport, to compensate for short posts and large displays.
 		self.ensureFilledViewport();
 		this.body.bind( 'post-load', { self: self }, self.checkViewportOnLoad );
@@ -98,8 +106,9 @@ Scroller.prototype.check = function() {
 	var container = this.element.offset();
 
 	// If the container can't be found, stop otherwise errors result
-	if ( 'object' !== typeof container ) {
+	if ( 'object' !== typeof container ) {	
 		return false;
+
 	}
 
 	var bottom = this.window.scrollTop() + this.window.height(),
@@ -243,7 +252,6 @@ Scroller.prototype.refresh = function() {
 				self.disabled = true;
 				// Update body classes, allowing the footer to return to static positioning
 				self.body.addClass( 'infinity-end' ).removeClass( 'infinity-success' );
-
 			// If we've succeeded...
 			} else if ( response.type == 'success' ) {
 				// If additional scripts are required by the incoming set of posts, parse them
@@ -323,11 +331,16 @@ Scroller.prototype.refresh = function() {
 				// Render the results
 				self.render.apply( self, arguments );
 
+				if ( isSmall() ) {
+					type = "click"
+				};
+
 				// If 'click' type and there are still posts to fetch, add back the handle
 				if ( type == 'click' ) {
 					if ( response.lastbatch ) {
 						if ( self.click_handle ) {
 							$( '#infinite-handle' ).remove();
+							$( '#infinite-handle' ).css("display", "none", "visibility", "hidden");
 						} else {
 							self.body.trigger( 'infinite-scroll-posts-end' );
 						}

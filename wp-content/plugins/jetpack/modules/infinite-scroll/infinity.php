@@ -531,7 +531,7 @@ class The_Neverending_Home_Page {
 		global $currentday;
 
 		// Default click handle text
-		$click_handle_text = __( 'Older posts', 'jetpack' );
+		$click_handle_text = __( 'Load Older Posts', 'jetpack' );
 
 		// If a single CPT is displayed, use its plural name instead of "posts"
 		// Could be empty (posts) or an array of multiple post types.
@@ -1049,7 +1049,7 @@ class The_Neverending_Home_Page {
 	function render() {
 		while ( have_posts() ) {
 			the_post();
-			echo '<section class="each-posting hide-for-small-only"> 
+			echo '<section class="each-posting "> 
 					<a class="post-title" href="';
 							the_permalink();
 			echo 	'">

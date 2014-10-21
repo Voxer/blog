@@ -611,12 +611,7 @@ img.alignright {
  	}
  	#home-page .pagination{
  		display: none !important;
- 	}
- 	@media #{$small-only}{
- 		#home-page .pagination{
- 		display: block !important;
- 	}
- 	}
+ 	} 
 	/**
 	 * 4.1 Pages
 	 * ------------------------------------
@@ -1087,7 +1082,6 @@ img.alignright {
 #home-page .each-posting #latest-post-thumb{
 	margin-bottom:15px;
 }
-
 .entry-content figure, .entry-content blockquote img{
 	margin:0 15px;
 }
@@ -1098,3 +1092,30 @@ img.alignright {
 .error a{
 	color: $voxer-orange;
 }
+
+#infinite-handle{
+	background-color: #f4f4f4;
+	padding:20px;
+	width:100%;
+	position: relative;
+	span{
+		background-color: transparent !important;
+		color: #1a1a1a !important;
+		text-align: center;
+		font-size: 18px !important;
+		font-weight: 300;
+		font-style: italic;
+		display: inherit;
+	}
+}
+ 
+	#home-page{
+		padding-bottom:80px;
+		position:relative;
+	}
+	#infinite-handle{
+		position: absolute;
+		bottom:0px;
+	}
+ 
+
