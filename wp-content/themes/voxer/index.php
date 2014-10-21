@@ -4,19 +4,10 @@
 	<div id="home-page">
 		<?php if ( have_posts() ) : ?>
 			<?php do_action('foundationPress_before_content'); ?>
-			<?php 
-				function getUrl() {
-			  	$url  = @( $_SERVER["HTTPS"] != 'on' ) ? 'http://'.$_SERVER["SERVER_NAME"] :  'https://'.$_SERVER["SERVER_NAME"];
-			  	$url .= ( $_SERVER["SERVER_PORT"] !== 80 ) ? ":".$_SERVER["SERVER_PORT"] : "";
-			  	$url .= $_SERVER["REQUEST_URI"];
-
-			  	return $url;
-			}
-			?>
 			<?php while ( have_posts() ) : the_post(); ?>
 				<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 				<?php $counter++; ?>
-				<?php if ( $counter == 1 && ( getUrl() == 'http://localhost:8888/'  || getUrl() == 'http://localhost:8888/page/1/'  || getUrl() == 'http://www.voxer-blog.com:80/' || getUrl() == 'http://www.voxer-blog.com:80/page/1' || getUrl() == 'http://blog.voxer.com/' || getUrl() == 'http://blog.voxer.com/page/1')   ): ?>
+				<?php if ( $counter == 1): ?>
 					<section id="latest-post">
 						<div id="latest-post-thumb" class="text-center">
 							<?php if ( has_post_thumbnail() ): ?>
