@@ -152,7 +152,9 @@ img.alignright {
 #wpadminbar {
 	position: fixed !important;
 }
-
+.fixed{
+	z-index:2000000010;
+}
 /**
  * 2.0 Typography
  * ----------------------------------------------------------------------------
@@ -410,7 +412,7 @@ img.alignright {
 		}
 	}
 	#subscribe{ 
-		padding:10px 0;
+		padding:10px 0 0;
 		background: url(../assets/blog-assets/subscribe-bg.png) repeat-x top left;
 		min-height: 211px;
 		margin:0 0 10px;
@@ -424,7 +426,7 @@ img.alignright {
 			display: block;
 			background: url(../assets/blog-assets/subscribe-icon.png) top right no-repeat;
 			min-height: 105px;
-			margin-bottom: 20px;
+			margin-bottom: 0px;
 			h1{
 				color: $voxer-white;
 				padding:0 15px;
@@ -791,6 +793,9 @@ img.alignright {
 	 */
 	.th.wp-post-image{
 		border:none !important;
+		width: auto !important;
+		max-height: 400px;
+		max-width: 100%; 
 	}
 	.th:hover, .th:focus, .th{
 		box-shadow:none !important;
@@ -1030,15 +1035,19 @@ img.alignright {
 		position: relative !important;
 		text-align: justify !important;
 		vertical-align: bottom !important;
-		width: 76px !important;
-		height: 20px !important;
+		min-width: 76px !important;
+		min-height: 20px !important;
+		width:auto;
+		height: auto;
 	}
 	.fb_iframe_widget iframe {
 		position: absolute !important;
 		border: none !important;
 		visibility: visible !important;
-		width: 76px !important;
-		height: 20px !important;
+		min-width: 76px !important;
+		min-height: 20px !important; 
+		width:auto;
+		height: auto;
 	}
 }
 .google-share.social{
@@ -1052,8 +1061,8 @@ img.alignright {
 		font-size: 1px !important;
 		vertical-align: baseline !important;
 		display: inline-block !important;
-		width: 82px !important;
-		height: 20px !important;
+		min-width: 82px !important;
+		min-height: 20px !important;
 		background: transparent !important;
 		iframe{
 			position: static !important;
@@ -1063,21 +1072,23 @@ img.alignright {
 			border-style: none !important;
 			left: 0px !important;
 			visibility: visible !important;
-			height: 20px !important;
+			min-height: 20px !important;
 		}
 	}
+}
+.google-share.social{
+	max-height:25px;
 }
 #subscribe-iframe{
 	overflow:hidden;
 	border:none;
-	height:200px;
-	background-color:#2E3033;
-	body{
-		overflow: hidden !important;
-	}
+	height:165px;
+	width: 101%;
+}
+#pardot-form .description {
+	text-align: center;
 }
 #subscribe{
-	background-color:#2E3033;
 }
 #home-page .each-posting #latest-post-thumb{
 	margin-bottom:15px;
