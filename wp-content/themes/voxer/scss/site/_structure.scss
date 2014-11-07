@@ -736,7 +736,6 @@ img.alignright {
 				}
 				#latest-post-social{
 					height: 100%;
-					overflow: hidden;
 					max-height: 200px;
 					padding-top: 15px;
 					right: 0px;
@@ -791,11 +790,21 @@ img.alignright {
 	 * 4.2 Posts
 	 * ------------------------------------
 	 */
+	.each-posting .th.wp-post-image{
+		border:none !important;
+		max-width: 100%;
+		max-height: 180px;
+		margin:0 auto;
+		float: none;
+		display: block;
+		width: auto;
+	}
 	.th.wp-post-image{
 		border:none !important;
-		width: auto !important;
-		max-height: 400px;
-		max-width: 100%; 
+		max-width: 100%;
+		margin:0 auto;
+		float: none;
+		display: block;
 	}
 	.th:hover, .th:focus, .th{
 		box-shadow:none !important;
@@ -1092,6 +1101,7 @@ img.alignright {
 }
 #home-page .each-posting #latest-post-thumb{
 	margin-bottom:15px;
+	max-height:auto;
 }
 .entry-content figure, .entry-content blockquote img{
 	margin:0 15px;
@@ -1119,14 +1129,33 @@ img.alignright {
 		display: inherit;
 	}
 }
- 
-	#home-page{
-		padding-bottom:80px;
-		position:relative;
+#latest-post img{
+	height:100%;
+	max-height:100%;
+	width:100%;
+}
+#home-page{
+	padding-bottom:80px;
+	position:relative;
+}
+#infinite-handle{
+	position: absolute;
+	bottom:0px;
+}
+iframe.youtube-player, p iframe{
+	max-width:90%;
+	margin:0 auto;
+	float: none;
+	display:block;
+}
+.search-result .th.wp-post-image{
+	width:100%;
+}
+@media #{$small-only}{
+	.each-posting .th.wp-post-image {
+		max-height: 100%;
+
 	}
-	#infinite-handle{
-		position: absolute;
-		bottom:0px;
-	}
+}
  
 
