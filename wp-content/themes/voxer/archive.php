@@ -13,12 +13,12 @@
 					<?php the_post_thumbnail('', array('class' => 'th')); ?>
 				<?php endif; ?>
 				</div>
-				<?php get_template_part( 'content', get_post_format() ); ?>
+				<?php get_template_part( 'contenthome', get_post_format() ); ?>
 			</div>
 		<?php endwhile; ?>
 
 		<?php else : ?>
-			<?php get_template_part( 'content', 'none' ); ?>
+			<?php get_template_part( 'contenthome', 'none' ); ?>
 
 	<?php endif; // end have_posts() check ?>
 
