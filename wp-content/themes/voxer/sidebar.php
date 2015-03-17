@@ -6,9 +6,7 @@
 	<section id="subscribe" class="row">
 		 <div class="header">
 			<h1>
-				<strong>Subscribe</strong><br>
-				for THE latest<br>
-				Voxer News!
+				Subscribe to  <br> the Voxer Blog
 			</h1>
 		</div>
 		<form id="subscribe-form" style="overflow:hidden;">
@@ -22,7 +20,7 @@
 	<?php dynamic_sidebar("sidebar-widgets"); ?>
 	</div>
 	<section id="download-app" class="row">
-		<h1>Download our Application</h1>
+		<h1>Download the Voxer app!</h1>
 		<div class="wrapper">
 		  	<div class="downloadapp large-4 small-4" >
 		  		<img src="<?php echo get_stylesheet_directory_uri() ; ?>/assets/blog-assets/voxer-ios.png">
